@@ -31,5 +31,5 @@ def handle_message(event):
         except Exception as e:
             reply = f"⚠️ 錯誤：{str(e)}"
     else:
-        reply = "請使用指令格式：配對：1990/01/01 與 1995/05/05，朋友"
+        reply = "請使用指令格式：配對：西元(YYYY)/月(MM)/日(DD) 與西元(YYYY)/月(MM)/日(DD)，朋友/同事/戀人"
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply))
