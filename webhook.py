@@ -7,8 +7,8 @@ from traits.matcher import match_pairing
 from traits.formatter import format_pairing_output
 
 app = Flask(__name__)
-line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
-handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
+line_bot_api = LineBotApi(os.getenv("kZAI2I7z2ZJBrsuDl1wP93W4ur4ObUo2yeNqIZvv7sSLDQ7XxF6wFddIUZfnfJVcUk/EaLoVJpyq33WgWAfSoTt9DWkS3LZ1lD0M6hVcN7wNA09KGzni4o9mlI7sez3+8PBD2rmCIasm1KZfgMfDuwdB04t89/1O/w1cDnyilFU="))
+handler = WebhookHandler(os.getenv("97816f3fbbc069d7f7175f819f1d9d20"))
 
 @app.route("/callback", methods=['POST'])
 def callback():
