@@ -8,8 +8,8 @@ from modules.pairing import generate_pairing_analysis
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(kZAI2I7z2ZJBrsuDl1wP93W4ur4ObUo2yeNqIZvv7sSLDQ7XxF6wFddIUZfnfJVcUk/EaLoVJpyq33WgWAfSoTt9DWkS3LZ1lD0M6hVcN7wNA09KGzni4o9mlI7sez3+8PBD2rmCIasm1KZfgMfDuwdB04t89/1O/w1cDnyilFU=)
-handler = WebhookHandler(97816f3fbbc069d7f7175f819f1d9d20)
+line_bot_api = LineBotApi("kZAI2I7z2ZJBrsuDl1wP93W4ur4ObUo2yeNqIZvv7sSLDQ7XxF6wFddIUZfnfJVcUk/EaLoVJpyq33WgWAfSoTt9DWkS3LZ1lD0M6hVcN7wNA09KGzni4o9mlI7sez3+8PBD2rmCIasm1KZfgMfDuwdB04t89/1O/w1cDnyilFU=")
+handler = WebhookHandler("97816f3fbbc069d7f7175f819f1d9d20")
 
 @app.route("/callback", methods=['POST'])
 def callback():
