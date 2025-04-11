@@ -1,14 +1,18 @@
-def format_pairing_output(name_a, birth_a, traits_a, name_b, birth_b, traits_b, match_result, relation):
-    return f"""🔮 命理配對分析（{relation}）
+def format_pairing_output(result: dict, relation: str) -> str:
+    zodiac = result["zodiac_result"]
+    tarot = result["tarot_result"]
+    wuxing = result["wuxing_result"]
 
-🎂 A：{birth_a} → 本性：{traits_a['numerology']['core']}｜星座：{traits_a['zodiac']}｜主牌：{traits_a['tarot']}｜五行：{traits_a['wuxing']}
-🎂 B：{birth_b} → 本性：{traits_b['numerology']['core']}｜星座：{traits_b['zodiac']}｜主牌：{traits_b['tarot']}｜五行：{traits_b['wuxing']}
+    return f"""
+🔮 命理配對分析（{relation}）
 
-🧠 能量互補：{match_result['tarot_result']['interaction']}（{traits_a['tarot']} × {traits_b['tarot']}）
-📊 五維能量距離：{match_result['energy_gap']}（本性差值為 {abs(traits_a['numerology']['core'] - traits_b['numerology']['core'])}）
-🔥 五行相處：{traits_a['wuxing']} × {traits_b['wuxing']} → {match_result['wuxing_result']['relation']}
+📈 配對綜合分數：{result['final_score']} / 100
+🧠 本性差距：{result['energy_gap']}
 
-🗣 相處建議：{match_result['suggestion']}
+🌟 星座互動：{zodiac['type']}（{zodiac['detail']}）→ 分數：{zodiac['compatibility_score']}
+🃏 主牌互動：{tarot['type']}（{tarot['detail']}）→ 分數：{tarot['compatibility_score']}
+🔥 五行關係：{wuxing['interaction']}（{wuxing['detail']}）→ 分數：{wuxing['score']}
 
-📈 配對指數：{match_result['final_score']} / 100
-"""
+🗣 建議語錄：
+{result['suggestion']}
+    """.strip()
